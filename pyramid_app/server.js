@@ -1,0 +1,21 @@
+const express = require('express')
+const mongoose = require('mongoose')
+const app = express()
+app.use(express.urlencoded({extended: true}))
+
+app.get('/one/new', (req, res)=>{
+    res.render('new.ejs')
+})
+
+
+app.post('/one', (req, res)=>{
+    res.send(req.body)
+})
+
+mongoose.connect('mongodb://localhost:27017/basiccrud').then(() => {
+   console.log('conneciton with mongo established')
+})
+
+app.listen(3000, () => {
+   console.log('listening')
+})
