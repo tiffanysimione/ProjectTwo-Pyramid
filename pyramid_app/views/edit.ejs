@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Edit Boys Page</h1>
+    <form action="/ones/<%=ThreesSeed._id%>?_method=PUT" method="POST">
+        Name:<input type="text" name="name" value="<%=ThreesSeed.name%>">
+        Date:<input type="text" name="date" value="<%=ThreesSeed.dateNumber%>">
+        Whose Boy:<input type="text" name="whoseBoy" value="<%=ThreesSeed.whoseBoy%>">
+        How Would You Rate:<input type="text" name="howWouldYouRate" value="<%=ThreesSeed.howWouldYouRate%>">
+        What Spot On Pyramid:<input type="text" name="pyramid" value="<%=ThreesSeed.pyramid%>">
+        <input type="submit" value="edit">
+    </form>
+</body>
+</html>

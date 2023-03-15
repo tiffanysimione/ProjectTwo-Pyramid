@@ -1,11 +1,13 @@
 const mongoose = require('mongoose')
 
 const threeScehma = new mongoose.Schema({
-  Name: { type: String, required: true},
-  Date Number: { type: String, required: true},
-  Whose Date: Boolean
-  How Would You Rate:
+  name:{ type: String},
+  dateNumber: {type: String},
+  whoseBoy: {type: String},
+  howWouldYouRate:{type: Number},
+  pyramid:{type:Number},
 })
+
 
 const ThreeSeed = mongoose.model('Three', threeScehma)
 

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" 
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" 
+    crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<h1>Data Page</h1>
+<table class="table">
+    <thead> 
+        <tr> 
+            <th>name</th>
+            <th>date number</th>
+            <th>whose boy</th>
+            <th>how would you rate</th>
+            <th>what spot on pyramid?</th>
+            <th> </th>
+            <th> </th>
+            
+            </tr>
+            </thead>
+
+
+<body>
+    <button class="btn btn-outline-primary">
+        <a href="http://localhost:3000/one/new"> New</a>
+         </button>
+
+         <button class="btn btn-outline-primary">
+         <a href="http://localhost:3000/ones/pyramid"> pyramid</a>
+ </button>
+
+    <% for(let i=0; i<ThreesSeed.length; i++){%>
+       
+
+
+        <tr>
+<td><%=ThreesSeed[i].name%></td>
+<td><%=ThreesSeed[i].dateNumber%></td>
+<td><%=ThreesSeed[i].whoseBoy%></td>
+<td><%=ThreesSeed[i].howWouldYouRate%></td>
+<td><%=ThreesSeed[i].pyramid%></td>
+<td><a href="/ones/<%=ThreesSeed[i]._id%>">ID</a></td>
+<td><a href="/ones/<%=ThreesSeed[i].id%>/edit">Edit</a></td> 
+
+
+<td>
+    <form action="/ones/<%=ThreesSeed[i].id%>?_method=DELETE" method="POST">
+        <input type="submit" value="DELETE">
+      </form>
+</td>
+</td>
+
+        <%}%>
+
+
+    
+    </tr>
+
+    
+
+</body>
+</table>
+</html>
