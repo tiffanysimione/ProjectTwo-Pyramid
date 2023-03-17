@@ -4,82 +4,68 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" 
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" 
+    crossorigin="anonymous">
     <title>Document</title>
 
-    <style>
-        .color {
-  background-color: grey;
-}
-
-.col {
-  padding: 5px;
-}
-
-.tier-0 {
-  margin: 5px 10%;
-}
-
-.tier-1 {
-  margin: 5px 15%;
-}
-
-.tier-2 {
-  margin: 5px 20%;
-}
-
-.tier-3 {
-  margin: 5px 25%;
-}
-
-.tier-4 {
-  margin: 5px 30%;
-}
-
-.tier-5 {
-  margin: 5px 35%;
-}
-
-
-
-    </style>
-</head>
-<body>
-
-    <div class="row color tier-0">
-        <div class="col">Tier 0</div>
-        <%= allThrees[0].name %>
-      </div>
+<head>
       
-      <div class="row color tier-1">
-        <div class="col">Tier 1</div>
-        <%= allThrees[1].name %>
-      </div>
-      
-      <div class="row color tier-2">
-        <div class="col">Tier 2</div>
-        <%= allThrees[2].name %>
-      </div>
-      
-      <div class="row color tier-3">
-        <div class="col">Tier 3</div>
-        <%= allThrees[3].name %>
-      </div>
-      
-      <div class="row color tier-4">
-        <div class="col"> <%= allThrees[4].name %> </div>
-        
-      </div>
-      
+ <style>
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  
+.row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
 
+.box {
+  width: 6rem;
+  height: 6rem;
+  background-color: azure;
+  margin: 0 10px;
+}
+    
 
-
-    <a href="http://localhost:3000/ones"> Go Back</a>
-
-    <h1>pyramid page</h1>
+     </style>
 
 
-   
-   
-   
+    </head>
+    <body>
+    
+    
+       
+            <div class="container">
+                <div class="row">
+                  <div id="box1" class="box"> <%= allThrees[0].name %></div>
+
+                </div>
+                <div class="row">
+                  <div id="box2" class="box"> <%= allThrees[1].name %></div>
+                  <div id="box3" class="box"> <%= allThrees[2].name %></div>
+                </div>
+                <div class="row">
+                  <div id="box4" class="box"> <%= allThrees[3].name %></div>
+                  <div id="box5" class="box"> <%= allThrees[4].name %></div>
+                  <div id="box6" class="box"><%= allThrees[5].name %></div>
+                </div>
+                <div class="row">
+                  <div id="box7" class="box"> <%= allThrees[6].name %></div>
+                  <div id="box8" class="box"> <%= allThrees[7].name %></div>
+                  <div id="box9" class="box"> <%= allThrees[8].name %></div>
+                  <div id="box10" class="box"> <%= allThrees[9].name %></div>
+                </div>
+              </div>
+    
+    
+    
+        <a href="http://localhost:3000/ones"> Go Back</a>
+    
+    </body>
+    

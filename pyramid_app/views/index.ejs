@@ -28,9 +28,7 @@
 
 
 <body>
-    <button class="btn btn-outline-primary">
-        <a href="http://localhost:3000/one/new"> New</a>
-         </button>
+   
 
          <button class="btn btn-outline-primary">
          <a href="http://localhost:3000/ones/pyramid"> pyramid</a>
@@ -46,7 +44,9 @@
 <td><%=ThreesSeed[i].whoseBoy%></td>
 <td><%=ThreesSeed[i].howWouldYouRate%></td>
 <td><%=ThreesSeed[i].pyramid%></td>
-<td><a href="/ones/<%=ThreesSeed[i]._id%>">ID</a></td>
+<td> <button class="btn btn-outline-primary">
+    <a href="http://localhost:3000/one/new"> New</a>
+     </button> </td>
 <td><a href="/ones/<%=ThreesSeed[i].id%>/edit">Edit</a></td> 
 
 

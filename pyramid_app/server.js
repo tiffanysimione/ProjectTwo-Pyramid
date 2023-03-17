@@ -2,7 +2,14 @@ const express = require('express')
 const mongoose = require('mongoose')
 const methodOverride = require('method-override')
 const ThreeSeed = require('./models/two.js');
+const expressLayouts = require('express-ejs-layouts');
 const app = express()
+
+
+app.use(expressLayouts);
+app.set('view engine', 'ejs')
+
+
 app.use(express.urlencoded({extended: true}))
 
 app.use(methodOverride('_method'))
@@ -23,6 +30,9 @@ app.get('/ones/pyramid', (req, res) => {
         res.render('pyramid.ejs', { allThrees: allThrees });
     });
 });
+
+app.use('/', require('./i'));
+app.use('/user', require('./user'));
 
 
 
@@ -46,13 +56,14 @@ app.get('/ones/:id/edit', (req,res)=>{
 
 
 
-app.get('/ones/:id/edit', (req,res)=>{
-    ThreeSeed.findById(req.params.id).then((foundThrees)=>{
-        res.render('edit.ejs', {
-            ThreesSeed:foundThree
-        })
-    })
-})
+// app.get('/ones/:id/edit', (req,res)=>{
+//     ThreeSeed.findById(req.params.id).then((foundThrees)=>{
+//         res.render('edit.ejs', {
+//             ThreesSeed:foundThree
+//         })
+//     })
+// })
+
 
 
 app.put('/ones/:id', (req, res) => {
@@ -73,15 +84,24 @@ app.delete('/ones/:id', (req, res) => {
        res.redirect('/ones')
     })
   })
+  
 
-
-
- 
+// mongoose.connect(db, { userNewUrlParser: true})
+// .then(()=>console.log('MongoDb Connected'))
+// .catch(err => console.log(err));
 
 mongoose.connect('mongodb://localhost:27017/basiccrud').then(() => {
    console.log('conneciton with mongo established')
 })
 
-app.listen(3000, () => {
-   console.log('listening')
-})
+// app.listen(3000, () => {
+//    console.log('listening')
+// })
+
+const PORT =process.env.PORT ||3000;
+
+app.listen(PORT, () => {
+    console.log(`Server started on port ${PORT}`);
+ });
+
+ 
